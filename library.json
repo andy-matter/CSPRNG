@@ -1,0 +1,38 @@
+{
+  "name": "CSPRNG",
+  "version": "0.1.0",
+  "description": "Simplified Cryptographically secure pseudorandom number generator using the shake alorythm",
+  "keywords": "Arduino, PlatformIO, CSPRNG, RNG",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/andy-matter/CSPRNG.git"
+  },
+  "dependencies":
+  [
+    {
+      "name": "ErrorCodes",
+      "version": "https://github.com/andy-matter/ErrorCodes.git"
+    },
+    {
+    "name": "Logger",
+    "version": "https://github.com/andy-matter/Logger.git"
+    },
+    {
+    "name": "CryptoCore",
+    "version": "https://github.com/andy-matter/CryptoCore.git"
+    }
+  ],
+  "authors":
+  [
+    {
+      "name": "andy-matter (Andreas)",
+      "email": "andy.matter.dev@gmail.com,",
+      "url": "https://github.com/andy-matter"
+    }
+  ],
+  "license": "NON",
+  "homepage": "",
+  "frameworks": "Arduino",
+  "platforms": ["atmelavr", "espressif8266", "espressif32", "stm32"]
+}
