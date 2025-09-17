@@ -29,20 +29,20 @@ public:
 
 
     /**
-     * @param out Reference to the buffer where random bytes will be written
+     * @param out Pointer to the buffer where random bytes will be written
      * @param len Number of random bytes to generate
      */
-    ErrorCode randomArray(uint8_t &out, size_t len);
+    ErrorCode randomArray(uint8_t *out, size_t len);
 
     /**
      * @param value Reference to a variable where the random byte will be stored
      */
-    ErrorCode randomByte(uint8_t& value);
+    ErrorCode randomByte(uint8_t &value);
 
     /**
      * @param value Reference to a variable where the random long will be stored
      */
-    ErrorCode randomLong(long& value);
+    ErrorCode randomLong(long &value);
     
     
 private:

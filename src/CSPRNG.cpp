@@ -41,7 +41,7 @@ ErrorCode CSPRNG::addSeed(const void* seed, size_t seedLen) {
 
 
 
-ErrorCode CSPRNG::randomArray(uint8_t &out, size_t len) {
+ErrorCode CSPRNG::randomArray(uint8_t *out, size_t len) {
     if (!_seeded) {
         Log::Alarm("CSPRNG", "RNG not seeded");
         return ErrorCode::NOT_INITIALIZED;
@@ -52,19 +52,19 @@ ErrorCode CSPRNG::randomArray(uint8_t &out, size_t len) {
         return ErrorCode::INVALID_PARAM;
     }
 
-    _shake.extend(&out, len);
+    _shake.extend(out, len);
     Log::Trace("CSPRNG", std::format("Generated {} random byte(s)", len));
     return ErrorCode::OK;
 }
 
 
-ErrorCode CSPRNG::randomByte(uint8_t& value) {
+ErrorCode CSPRNG::randomByte(uint8_t &value) {
     value = 0;
-    return randomArray(value, 1);
+    return randomArray(&value, 1);
 }
 
 
-ErrorCode CSPRNG::randomLong(long& value) {
+ErrorCode CSPRNG::randomLong(long &value) {
     value = 0;
-    return randomArray(reinterpret_cast<uint8_t&>(value), sizeof(value));
+    return randomArray(reinterpret_cast<uint8_t*>(value), sizeof(value));
 }
