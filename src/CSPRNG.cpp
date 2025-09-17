@@ -65,6 +65,9 @@ ErrorCode CSPRNG::randomByte(uint8_t &value) {
 
 
 ErrorCode CSPRNG::randomLong(long &value) {
-    value = 0;
-    return randomArray(reinterpret_cast<uint8_t*>(value), sizeof(value));
+    uint8_t buf[sizeof(long)];
+    ErrorCode State = randomArray(buf, sizeof(buf));
+    std::memcpy(&value, buf, sizeof(value));
+
+    return State;
 }

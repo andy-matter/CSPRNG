@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include "Core_SHAKE.h"
 #include "ErrorCodes.h"
 #include "Logger.h"
